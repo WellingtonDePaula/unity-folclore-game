@@ -334,6 +334,16 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.wellz.dialogue-system": {
+      "version": "https://github.com/WellingtonDePaula/dialogue-system-package.git?path=/com.wellz.dialogue-system",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.ugui": "2.0.0",
+        "com.unity.inputsystem": "1.14.0"
+      },
+      "hash": "abff80a8306c109851f45686169abe0e9ea5ef62"
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
