@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609ef20b7204cb643a5d6ab1bc5e692f, type: 3}
+  m_Name: CucaJailNote
+  m_EditorClassIdentifier: 
+  content: IJFDNAIHWNDIHANWDHUNA UJHDNAIWDN IOJAWNDIJ NAWIJDN AIWND IAWNI JDN
+  background: {fileID: -6614141653771834304, guid: 443306562d42671459f6c09ab0649e70, type: 3}
