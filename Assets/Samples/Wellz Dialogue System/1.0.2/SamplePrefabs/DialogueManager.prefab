@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6979492588654331769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5409975408509477235}
+  - component: {fileID: 184553673081088241}
+  - component: {fileID: 1602607887187223852}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5409975408509477235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979492588654331769}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &184553673081088241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979492588654331769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6496fc48b5646d45a29ba51645da17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.wellz.dialogue-system.runtime::DialogueManager
+  _dialogueUIPrefab: {fileID: 222556520038585001, guid: c0fe76c3379c85a4980525905c45e3c3, type: 3}
+  _canvas: {fileID: 0}
+  _onNextDialogueEvent: {fileID: 11400000, guid: 71b3f2b6cc44ced4688d8b478f7a43c4, type: 2}
+  _onSkipStartedEvent: {fileID: 11400000, guid: db5ff394f1b7bb541b32e03bfdc2a6e8, type: 2}
+  _onSkipCanceledEvent: {fileID: 11400000, guid: b206b5a6ad62a6c489917b8a6a9e4502, type: 2}
+--- !u!114 &1602607887187223852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979492588654331769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2456e360f1fd74d438488e9edad74d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.wellz.dialogue-system.runtime::PlayerInputReader
+  _nextDialogueEvent: {fileID: 11400000, guid: 71b3f2b6cc44ced4688d8b478f7a43c4, type: 2}
+  _skipStartedEvent: {fileID: 11400000, guid: db5ff394f1b7bb541b32e03bfdc2a6e8, type: 2}
+  _skipCanceledEvent: {fileID: 11400000, guid: b206b5a6ad62a6c489917b8a6a9e4502, type: 2}
