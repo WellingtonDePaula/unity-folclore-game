@@ -3,7 +3,11 @@ using UnityEngine;
 
 public class EventsManager : MonoBehaviour, ISaveable {
     public bool mineKey = false;
+
+    public int unkownDialogIndex = 0;
+
     public bool jailKey = false;
+
     public bool warehouseKey = false;
 
     public bool stick = false;
@@ -19,6 +23,8 @@ public class EventsManager : MonoBehaviour, ISaveable {
 
     public void LoadObject(string sceneName) {
         mineKey = Convert.ToBoolean(PlayerPrefs.GetInt("mineKey", 0));
+        unkownDialogIndex = PlayerPrefs.GetInt("unkownDialogIndex", 0);
+
         jailKey = Convert.ToBoolean(PlayerPrefs.GetInt("jailKey", 0));
         warehouseKey = Convert.ToBoolean(PlayerPrefs.GetInt("warehouseKey", 0));
         stick = Convert.ToBoolean(PlayerPrefs.GetInt("stick", 0));
@@ -26,6 +32,8 @@ public class EventsManager : MonoBehaviour, ISaveable {
 
     public void SaveObject(string sceneName) {
         PlayerPrefs.SetInt("mineKey", Convert.ToInt16(mineKey));
+        PlayerPrefs.SetInt("unkownDialogIndex", unkownDialogIndex);
+
         PlayerPrefs.SetInt("jailKey", Convert.ToInt16(jailKey));
         PlayerPrefs.SetInt("warehouseKey", Convert.ToInt16(warehouseKey));
         PlayerPrefs.SetInt("stick", Convert.ToInt16(stick));

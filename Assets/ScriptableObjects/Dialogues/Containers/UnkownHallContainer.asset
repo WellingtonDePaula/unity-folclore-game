@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c70e75a37c6eead4fbbfd04e128fa5f2, type: 3}
-  m_Name: UnknowDialog01
-  m_EditorClassIdentifier: 
-  text: TESTE_TESTE_TESTE_DIALOGO 1
-  context: UnknowDialog01
+  m_Script: {fileID: 11500000, guid: 697876b68c27c5540905856f84f1cc9f, type: 3}
+  m_Name: UnkownHallContainer
+  m_EditorClassIdentifier: com.wellz.dialogue-system.runtime::DialogueContainer
+  _onEnterEvent: []
+  _onExitEvent: []
+  allDialogs: []

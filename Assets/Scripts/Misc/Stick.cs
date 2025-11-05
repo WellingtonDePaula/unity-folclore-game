@@ -25,7 +25,7 @@ public class Stick : MonoBehaviour, ISaveable {
 
     public void LoadObject(string sceneName) {
         _active = Convert.ToBoolean(PlayerPrefs.GetInt($"{sceneName}:stickActive", 1));
-        EventsManager.Instance.mineKey = Convert.ToBoolean(PlayerPrefs.GetInt($"{sceneName}:stickToUse", 0));
+        EventsManager.Instance.stick = Convert.ToBoolean(PlayerPrefs.GetInt($"{sceneName}:stickToUse", 0));
         this.gameObject.SetActive(Convert.ToBoolean(PlayerPrefs.GetInt($"{sceneName}:stickActive", 1)));
     }
 

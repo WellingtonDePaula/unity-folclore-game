@@ -2,9 +2,8 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DialogBehaviour : MonoBehaviour, ISaveable {
+public class DialogBehaviour : MonoBehaviour {
     [SerializeField] DialogData[] _dialogs;
-    int _currentDialogIndex = 0;
     bool _canTalk = true;
     public bool CanTalk { get => _canTalk; set => _canTalk = value; }
 
@@ -12,16 +11,15 @@ public class DialogBehaviour : MonoBehaviour, ISaveable {
     [SerializeField] GameObject _messageBoxObj;
     GameObject _messageBox;
     GameObject _player = null;
-
+ 
     bool _playerNearby;
 
     private void Awake() {
-        SaveManager.Instance.RegisterSaveable(this);
-    }
 
+    }
     private void Update() {
-        if (_currentDialogIndex >= _dialogs.Length) {
-            _currentDialogIndex = _dialogs.Length;
+        if (EventsManager.Instance.unkownDialogIndex >= _dialogs.Length) {
+            EventsManager.Instance.unkownDialogIndex = _dialogs.Length;
         }
 
         if (!_playerNearby) { return; }
@@ -30,11 +28,14 @@ public class DialogBehaviour : MonoBehaviour, ISaveable {
             if (!_messageBox) {
                 GameManager.Instance.GamePaused = true;
                 _messageBox = Instantiate(_messageBoxObj, _canvas.transform);
-                _messageBox.GetComponent<MessageBoxBehaviour>().StartDialog(_dialogs[_currentDialogIndex]);
+                _messageBox.GetComponent<MessageBoxBehaviour>().StartDialog(_dialogs[EventsManager.Instance.unkownDialogIndex]);
             } else {
-                switch (_dialogs[_currentDialogIndex].context) {
-                    case "UnknowDialog":
+                switch (_dialogs[EventsManager.Instance.unkownDialogIndex].context) {
+                    case "UnknowDialog01":
                         EventsManager.Instance.warehouseKey = true;
+                        break;
+                    case "UnknowDialog02":
+                        EventsManager.Instance.mineKey = true;
                         break;
                 }
                 _player.GetComponent<PlayerStateMachine>().CurrentState = _player.GetComponent<PlayerStateMachine>().States.Idle();
@@ -42,22 +43,6 @@ public class DialogBehaviour : MonoBehaviour, ISaveable {
                 Destroy(_messageBox);
             }
         }
-    }
-
-    public void SaveObject(string sceneName) {
-        PlayerPrefs.SetInt($"{sceneName}:{_dialogs[_currentDialogIndex].context}", _currentDialogIndex);
-    }
-
-    public void LoadObject(string sceneName) {
-        _currentDialogIndex = PlayerPrefs.GetInt($"{sceneName}:{_dialogs[_currentDialogIndex].context}", 0);
-    }
-
-    public void Deactive() {
-        SaveManager.Instance.RemoveSaveable(this);
-    }
-
-    private void OnDestroy() {
-        Deactive();
     }
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
