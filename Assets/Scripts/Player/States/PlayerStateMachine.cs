@@ -1,3 +1,4 @@
+using System;
 using UnityEditor.ShaderGraph;
 using UnityEngine;
 
@@ -20,6 +21,8 @@ public class PlayerStateMachine : MonoBehaviour, ISaveable {
     [SerializeField] string _orientation = "Front";
 
     [SerializeField] GameObject _projectileRef;
+
+    public bool hasSlingshot = false;
 
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
     public Rigidbody2D Body { get { return _body; } }
@@ -102,6 +105,7 @@ public class PlayerStateMachine : MonoBehaviour, ISaveable {
     public void SaveObject(string sceneName) {
         PlayerPrefs.SetFloat($"{sceneName}:playerX", gameObject.transform.position.x);
         PlayerPrefs.SetFloat($"{sceneName}:playerY", gameObject.transform.position.y);
+        PlayerPrefs.SetInt("player:hasSlingshot", Convert.ToInt16(hasSlingshot));
     }
 
     public void LoadObject(string sceneName) {
@@ -109,6 +113,8 @@ public class PlayerStateMachine : MonoBehaviour, ISaveable {
         playerX = PlayerPrefs.GetFloat($"{sceneName}:playerX", transform.position.x);
         playerY = PlayerPrefs.GetFloat($"{sceneName}:playerY", transform.position.y);
         gameObject.transform.position = new Vector3(playerX, playerY, 0);
+        hasSlingshot = Convert.ToBoolean(PlayerPrefs.GetInt("player:hasSlingshot"));
+
     }
 
     public void Deactive() {

@@ -11,7 +11,7 @@ public class PlayerStateIdle : PlayerBaseState {
             SwitchState(_factory.Dash());
             _ctx.InputReader.ConsumeDashInput();
         }
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0) && _ctx.hasSlingshot) {
             SwitchState(_factory.Shoot());
         }
     }

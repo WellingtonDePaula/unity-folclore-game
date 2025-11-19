@@ -37,6 +37,9 @@ public class DialogBehaviour : MonoBehaviour {
                     case "UnknowDialog02":
                         EventsManager.Instance.mineKey = true;
                         break;
+                    case "UnknowDialog03":
+                        EventsManager.Instance.canCreateSlingshot = true;
+                        break;
                 }
                 _player.GetComponent<PlayerStateMachine>().CurrentState = _player.GetComponent<PlayerStateMachine>().States.Idle();
                 GameManager.Instance.GamePaused = false;

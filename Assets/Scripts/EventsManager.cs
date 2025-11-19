@@ -12,6 +12,8 @@ public class EventsManager : MonoBehaviour, ISaveable {
 
     public bool stick = false;
 
+    public bool canCreateSlingshot = false;
+
     public static EventsManager Instance { get; private set; }
 
     private void OnDestroy() {
@@ -28,6 +30,7 @@ public class EventsManager : MonoBehaviour, ISaveable {
         jailKey = Convert.ToBoolean(PlayerPrefs.GetInt("jailKey", 0));
         warehouseKey = Convert.ToBoolean(PlayerPrefs.GetInt("warehouseKey", 0));
         stick = Convert.ToBoolean(PlayerPrefs.GetInt("stick", 0));
+        canCreateSlingshot = Convert.ToBoolean(PlayerPrefs.GetInt("canCreateSlingshot"));
     }
 
     public void SaveObject(string sceneName) {
@@ -37,6 +40,7 @@ public class EventsManager : MonoBehaviour, ISaveable {
         PlayerPrefs.SetInt("jailKey", Convert.ToInt16(jailKey));
         PlayerPrefs.SetInt("warehouseKey", Convert.ToInt16(warehouseKey));
         PlayerPrefs.SetInt("stick", Convert.ToInt16(stick));
+        PlayerPrefs.SetInt("canCreateSlingshot", Convert.ToInt16(canCreateSlingshot));
     }
 
     private void Awake() {

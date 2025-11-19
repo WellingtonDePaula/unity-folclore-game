@@ -672,6 +672,7 @@ MonoBehaviour:
   _dialogs:
   - {fileID: 11400000, guid: ef3a8be05350e02499fb39f59a504115, type: 2}
   - {fileID: 11400000, guid: 9ec1c31101771b24693f175fcdd312da, type: 2}
+  - {fileID: 11400000, guid: dde0aa68888581c4c84fbd021df0f96b, type: 2}
   _canvas: {fileID: 234342326}
   _messageBoxObj: {fileID: 3806710994233648226, guid: 66ed94d90b69a3d40a6f4d266083234c, type: 3}
 --- !u!61 &575952332
@@ -980,7 +981,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mineKey: 0
-  dialogMineKey: 0
   unkownDialogIndex: 0
   jailKey: 0
   warehouseKey: 0

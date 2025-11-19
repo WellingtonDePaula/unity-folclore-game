@@ -13,6 +13,7 @@ public class Stick : MonoBehaviour, ISaveable {
         if (_nearby) {
             if (Input.GetKeyDown(KeyCode.E)) {
                 EventsManager.Instance.stick = true;
+                EventsManager.Instance.unkownDialogIndex = 2;
                 _active = false;
                 SaveObject(SceneManager.GetActiveScene().name);
                 Destroy(gameObject);
